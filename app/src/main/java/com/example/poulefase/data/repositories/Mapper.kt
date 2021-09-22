@@ -12,8 +12,8 @@ import com.google.firebase.firestore.DocumentSnapshot
 fun DocumentSnapshot.toGames() = Games (
     GameID = this.id,
     PoolID = this["poolID"] as String,
-    HomeTeamID = this["homeTeamID"] as String,
-    AwayTeamID = this["awayTeamID"] as String,
+    HomeName = this["homeName"] as String,
+    AwayName = this["awayName"] as String,
     GoalsHomeTeam = this["goalsHomeTeam"] as String,
     GoalsAwayTeam = this["goalsAwayTeam"] as String,
     PointsHomeTeam = this["pointsHomeTeam"] as String,
@@ -51,8 +51,8 @@ fun DocumentSnapshot.toPoolTeams() = PoolTeams(
 // Convert object to FireBase object
 fun Games.toGamesData() = mapOf (
     "poolID" to this.PoolID,
-    "homeTeamID" to this.HomeTeamID,
-    "awayTeamID" to this.AwayTeamID,
+    "homeName" to this.HomeName,
+    "awayName" to this.AwayName,
     "goalsHomeTeam" to this.GoalsHomeTeam,
     "goalsAwayTeam" to this.GoalsAwayTeam,
     "pointsHomeTeam" to this.PointsHomeTeam,

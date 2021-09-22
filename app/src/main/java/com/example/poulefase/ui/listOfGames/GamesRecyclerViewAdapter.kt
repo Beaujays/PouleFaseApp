@@ -31,7 +31,12 @@ class GamesRecyclerViewAdapter (
 
     inner class ViewHolder(view : View) : RecyclerView.ViewHolder(view)
     {
-        val awayTeamID: TextView = view.findViewById(R.id.awayTeamID)
+        val homeName: TextView = view.findViewById(R.id.homeName)
+        val awayName: TextView = view.findViewById(R.id.awayName)
+        val homePoints: TextView = view.findViewById(R.id.pointsHome)
+        val awayPoints: TextView = view.findViewById(R.id.pointsAway)
+        val homeGoals: TextView = view.findViewById(R.id.goalsHome)
+        val awayGoals: TextView = view.findViewById(R.id.goalsAway)
         var id: String? = null
 
     }
@@ -47,8 +52,14 @@ class GamesRecyclerViewAdapter (
         val game = games.value?.get(position) ?: throw java.lang.IllegalStateException()
 
         // makes title of subject in list
-        holder.id = game.AwayTeamID
-        holder.awayTeamID.text = game.AwayTeamID
+        holder.id = game.GameID
+        holder.homeName.text = game.HomeName
+        holder.awayName.text = game.AwayName
+        holder.homePoints.text = game.PointsHomeTeam
+        holder.awayPoints.text = game.PointsAwayTeam
+        holder.homeGoals.text = game.GoalsHomeTeam
+        holder.awayGoals.text = game.GoalsAwayTeam
+
     }
 
     override fun getItemCount(): Int = games.value?.size ?: 0
