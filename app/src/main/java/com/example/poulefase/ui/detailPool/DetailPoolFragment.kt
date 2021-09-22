@@ -23,6 +23,7 @@ import com.example.poulefase.ui.MainActivity
 
 class DetailPoolFragment : Fragment() {
 
+    // Set late init and variables
     private val detailPoolViewModel: DetailPoolViewModel by viewModels {
         val application = requireActivity().application as MyApplication
         val poolTeamsRepository = application.poolTeamsRepository

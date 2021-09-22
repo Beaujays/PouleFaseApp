@@ -16,6 +16,8 @@ import com.example.poulefase.ui.MainActivity
 import com.example.poulefase.databinding.PoolsViewFragmentBinding
 
 class ListOfPoolsViewFragment : Fragment() {
+
+    // Set late init and variables
     private val listOfPoolsViewModel: ListOfPoolsViewModel by viewModels {
         val application = requireActivity().application as MyApplication
         val poolsRepository = application.poolsRepository

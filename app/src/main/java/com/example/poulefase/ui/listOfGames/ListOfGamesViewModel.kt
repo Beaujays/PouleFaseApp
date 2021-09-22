@@ -4,9 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.poulefase.data.objects.Games
-import com.example.poulefase.data.objects.Pools
 import com.example.poulefase.data.repositories.GamesRepository
-import com.example.poulefase.data.repositories.PoolsRepository
 
 class ListOfGamesViewModel(repository: GamesRepository) : ViewModel()
 {

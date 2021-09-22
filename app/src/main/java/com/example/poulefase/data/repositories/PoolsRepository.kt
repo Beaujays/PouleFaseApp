@@ -2,9 +2,7 @@ package com.example.poulefase.data.repositories
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.liveData
 import com.example.poulefase.data.objects.Pools
-import com.example.poulefase.data.objects.Teams
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.QueryDocumentSnapshot
 

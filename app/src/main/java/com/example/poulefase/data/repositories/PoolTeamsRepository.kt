@@ -41,6 +41,7 @@ class PoolTeamsRepository(private val poolTeamsCollectionReference: CollectionRe
         return all
     }
 
+    // Get object based on TeamID and PoolID from FireStore
     fun getTeamId(id: String, poolId: String): LiveData<PoolTeams>? {
         poolTeamsCollectionReference.get()
             .addOnSuccessListener { documents ->
@@ -55,16 +56,5 @@ class PoolTeamsRepository(private val poolTeamsCollectionReference: CollectionRe
             }
         }
         return null
-    }
-
-    // Get by ID
-    private fun getById(id: String): LiveData<PoolTeams> {
-        val result = MutableLiveData(defaultPoolTeams)
-        poolTeamsCollectionReference.document(id).get()
-            .addOnSuccessListener { doc ->
-                doc.toPoolTeams()
-                    .let(result::postValue)
-            }
-        return result
     }
 }

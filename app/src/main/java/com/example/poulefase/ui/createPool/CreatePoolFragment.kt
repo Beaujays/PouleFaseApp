@@ -58,14 +58,14 @@ class CreatePoolFragment : Fragment() {
         var sequenceNb = 0
         list = createPoolViewModel.allTeams
 
-        // Button for save the site defect
+        // Button to create a new Pools object
         binding.buttonSavePool.setOnClickListener {
             if (TextUtils.isEmpty(poolName.text)) {
                 val toast = Toast.makeText(context, "Please fill in all fields", Toast.LENGTH_SHORT)
                 toast.show()
             } else {
 
-                // Save pool in database
+                // Save Pools in FireStore
                 Log.i("buttonSave", "Not empty filled with ${poolName.text}")
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     pool = Pools(
@@ -101,6 +101,8 @@ class CreatePoolFragment : Fragment() {
         }
         return binding.root
     }
+
+    // Get random string for PoolID
     private fun getRandomString(length: Int) : String {
         val allowedChars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
         return (1..length)

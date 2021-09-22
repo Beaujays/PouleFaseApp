@@ -12,14 +12,6 @@ class TeamsRepository(private val teamsCollectionReference: CollectionReference)
     private val all: MutableLiveData<List<Teams>> =
             MutableLiveData(listOf(defaultTeams))
 
-    // Post object on FireStore
-    fun insert(teams: Teams)
-    {
-        teamsCollectionReference.document().set(
-                teams.toTeamsData()
-        ).addOnSuccessListener { getAll() }
-    }
-
     // Fetch all from FireStore
     fun getAll(): LiveData<List<Teams>>
     {
@@ -30,24 +22,6 @@ class TeamsRepository(private val teamsCollectionReference: CollectionReference)
                             .let(all::postValue)
                 }
         return all
-    }
-
-    // Fetch from FireStore
-    fun getTeam(id: String): LiveData<Teams>?
-    {
-        teamsCollectionReference.get()
-            .addOnSuccessListener { documents ->
-                documents
-                    .map(QueryDocumentSnapshot::toTeams)
-                    .let(all::postValue)
-            }
-
-        all.value?.forEach { res ->
-            if (res.TeamID == id) {
-                return getById(res.TeamID)
-            }
-        }
-        return null
     }
 
     // Get by ID

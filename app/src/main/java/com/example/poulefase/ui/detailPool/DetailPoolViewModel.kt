@@ -21,7 +21,6 @@ class DetailPoolViewModel(
     val pool: MutableLiveData<Pools> =
         repositoryPools.getById(id) as MutableLiveData<Pools>
     val poolTeams: LiveData<List<PoolTeams>> = repositoryPoolTeams.getAll()
-    private val games: LiveData<List<Games>> = repositoryGames.getAll()
 
     val allPoolTeams: LiveData<List<PoolTeams>>
         get() = poolTeams
@@ -29,16 +28,6 @@ class DetailPoolViewModel(
                 (list)
                     .filter { poolTeams ->
                         poolTeams.PoolID == pool.value?.PoolID
-                    }
-                    .toList()
-            }
-
-    val allGamesByPoolId: LiveData<List<Games>>
-        get() = games
-            .map { list ->
-                (list)
-                    .filter { game ->
-                        game.PoolID == pool.value?.PoolID
                     }
                     .toList()
             }

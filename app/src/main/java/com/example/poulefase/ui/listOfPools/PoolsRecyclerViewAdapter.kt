@@ -1,5 +1,6 @@
 package com.example.poulefase.ui.listOfPools
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import com.example.poulefase.R
 import com.example.poulefase.ui.MainActivity
 import java.lang.IllegalStateException
 
+@SuppressLint("NotifyDataSetChanged")
 class PoolsRecyclerViewAdapter
     (
     private val activity: MainActivity,
@@ -58,8 +60,8 @@ class PoolsRecyclerViewAdapter
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.i("SiteDefectsRecyclerView", "onBindViewHolder: $position")
-        val pool = pools.value?.get(position) ?: throw java.lang.IllegalStateException()
+        Log.i("PoolsRecyclerView", "onBindViewHolder: $position")
+        val pool = pools.value?.get(position) ?: throw IllegalStateException()
 
         // makes title of subject in list
         holder.id = pool.ID
