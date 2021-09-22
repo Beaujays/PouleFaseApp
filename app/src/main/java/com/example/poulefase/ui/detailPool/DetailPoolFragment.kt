@@ -115,8 +115,8 @@ class DetailPoolFragment : Fragment() {
                     val games = Games(
                         "",
                         poolID,
-                        homePoolTeam.value!!.TeamID,
-                        awayPoolTeam.value!!.TeamID,
+                        homePoolTeam.value!!.TeamName,
+                        awayPoolTeam.value!!.TeamName,
                         "1",
                         "0",
                         "3",
@@ -225,8 +225,8 @@ class DetailPoolFragment : Fragment() {
                     val games = Games(
                         "",
                         poolID,
-                        homePoolTeam.value!!.TeamID,
-                        awayPoolTeam.value!!.TeamID,
+                        homePoolTeam.value!!.TeamName,
+                        awayPoolTeam.value!!.TeamName,
                         "1",
                         "0",
                         "1",

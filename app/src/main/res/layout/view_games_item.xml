@@ -5,7 +5,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="275dp">
 
         <TextView
             android:id="@+id/awayName"
@@ -15,15 +15,15 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif"
             android:textAlignment="center"
-            android:textColor="@color/green"
-            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="normal|bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.995"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.094"
+            app:layout_constraintVertical_bias="0.13"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -34,15 +34,15 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif"
             android:textAlignment="center"
-            android:textColor="@color/green"
-            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="normal|bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.094"
+            app:layout_constraintVertical_bias="0.13"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -53,14 +53,15 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif"
             android:textAlignment="center"
-            android:textColor="@color/green"
-            android:textSize="25sp"
-            android:textStyle="normal|bold"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.415"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -71,15 +72,15 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif"
             android:textAlignment="center"
-            android:textColor="@color/green"
-            android:textSize="25sp"
-            android:textStyle="normal|bold"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.85"
+            app:layout_constraintVertical_bias="0.807"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -90,15 +91,15 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif"
             android:textAlignment="center"
-            android:textColor="@color/green"
-            android:textSize="25sp"
-            android:textStyle="normal|bold"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.85"
+            app:layout_constraintVertical_bias="0.807"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -109,14 +110,15 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif"
             android:textAlignment="center"
-            android:textColor="@color/green"
-            android:textSize="25sp"
-            android:textStyle="normal|bold"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.415"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -125,6 +127,7 @@
             android:layout_height="24dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:background="@color/darkgray"
             android:fontFamily="sans-serif"
             android:text="Points"
             android:textAlignment="center"
@@ -145,6 +148,7 @@
             android:layout_height="24dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:background="@color/darkgray"
             android:fontFamily="sans-serif"
             android:text="Goals"
             android:textAlignment="center"
@@ -165,6 +169,7 @@
             android:layout_height="24dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:background="@color/darkgray"
             android:fontFamily="sans-serif"
             android:text="Goals"
             android:textAlignment="center"
@@ -185,6 +190,7 @@
             android:layout_height="24dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:background="@color/darkgray"
             android:fontFamily="sans-serif"
             android:text="Points"
             android:textAlignment="center"

@@ -17,5 +17,10 @@
             android:id="@+id/nav_listOfPools"
             android:icon="@drawable/ic_baseline_list"
             android:title="@string/list_of_pools" />
+
+        <item
+            android:id="@+id/nav_listOfGames"
+            android:icon="@drawable/ic_baseline_list"
+            android:title="@string/all_played_games" />
     </group>
 </menu>

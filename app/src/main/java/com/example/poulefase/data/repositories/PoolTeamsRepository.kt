@@ -36,7 +36,7 @@ class PoolTeamsRepository(private val poolTeamsCollectionReference: CollectionRe
             .addOnSuccessListener { documents ->
                 documents
                     .map(QueryDocumentSnapshot::toPoolTeams)
-                    .sortedByDescending { it.PointsFor }
+                    .sortedByDescending { it.PointsFor.toInt() }
                     .let(all::postValue)
             }
         return all

@@ -38,7 +38,7 @@
             app:argType="string" />
         <action
             android:id="@+id/action_nav_detailPool_to_listOfGamesFragment"
-            app:destination="@id/listOfGamesFragment" />
+            app:destination="@id/nav_listOfGames" />
     </fragment>
     <fragment
         android:id="@+id/nav_home"
@@ -46,9 +46,9 @@
         android:label="@string/home"
         tools:layout="@layout/home_fragment" />
     <fragment
-        android:id="@+id/listOfGamesFragment"
+        android:id="@+id/nav_listOfGames"
         android:name="com.example.poulefase.ui.listOfGames.ListOfGamesFragment"
-        android:label="ListOfGamesFragment" >
+        android:label="List of games" >
         <argument
             android:name="PoolID"
             app:argType="string" />

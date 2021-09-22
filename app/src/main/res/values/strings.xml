@@ -14,4 +14,5 @@
     <string name="goals_against">Goals against</string>
     <string name="points_for">Points for</string>
     <string name="points_against">Points against</string>
+    <string name="all_played_games">All played games</string>
 </resources>
