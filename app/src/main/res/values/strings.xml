@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">PouleFase</string>
+    <string name="add_a_new_pool">Add a new pool</string>
+    <string name="home">Home</string>
+    <string name="list_of_pools">List of pools</string>
+    <string name="start_the_games">Start the games</string>
+    <string name="android_studio">Android Studio</string>
+    <string name="test_test_com">Test@test.com</string>
+    <string name="navigation_header">Navigation header</string>
+    <string name="sign_out">Sign out</string>
+    <string name="fill_in_pool_name">Fill in pool name</string>
+    <string name="save">save</string>
+    <string name="football">Football</string>
+    <string name="welcome">Welcome!</string>
+    <string name="sign_out_text">Sign in with another account?</string>
+    <string name="choose_a_pool">Choose a pool</string>
+    <string name="games">Games</string>
+    <string name="fatigue">Fatigue</string>
+    <string name="goals_against">Goals against</string>
+    <string name="goals_for">Goals for</string>
+    <string name="points_against">Points against</string>
+    <string name="points_for">Points for</string>
+    <string name="game_1">Game 1</string>
+    <string name="points_away">points away</string>
+    <string name="points_home">Points home</string>
+    <string name="goals_away">Goals away</string>
+    <string name="away">Away</string>
+    <string name="game_2">Game 2</string>
+    <string name="won_lose">Won/lose</string>
+    <string name="points">Points</string>
+    <string name="game_3">Game 3</string>
+</resources>

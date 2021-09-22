@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_listOfPools"
+        android:name="com.example.poulefase.ui.listOfPools.ListOfPoolsViewFragment"
+        android:label="@string/list_of_pools"
+        tools:layout="@layout/pools_view_fragment">
+        <action
+            android:id="@+id/action_listOfPoolsViewFragment_to_createPoolFragment"
+            app:destination="@id/nav_addPool" />
+        <action
+            android:id="@+id/action_listOfPoolsViewFragment_to_detailPoolFragment"
+            app:destination="@id/nav_detailPool" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_addPool"
+        android:name="com.example.poulefase.ui.createPool.CreatePoolFragment"
+        android:label="@string/add_a_new_pool"
+        tools:layout="@layout/create_pool_fragment">
+        <action
+            android:id="@+id/action_createPoolFragment_to_listOfPoolsViewFragment"
+            app:destination="@id/nav_listOfPools" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_detailPool"
+        android:name="com.example.poulefase.ui.detailPool.DetailPoolFragment"
+        android:label="Details"
+        tools:layout="@layout/detail_pool_fragment">
+        <action
+            android:id="@+id/action_detailPoolFragment_to_listOfPoolsViewFragment"
+            app:destination="@id/nav_listOfPools" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nav_detailPool_to_listOfGamesFragment"
+            app:destination="@id/listOfGamesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.poulefase.ui.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/listOfGamesFragment"
+        android:name="com.example.poulefase.ui.listOfGames.ListOfGamesFragment"
+        android:label="ListOfGamesFragment" >
+        <argument
+            android:name="PoolID"
+            app:argType="string" />
+    </fragment>
+</navigation>

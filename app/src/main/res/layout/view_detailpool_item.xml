@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="-37dp">
+
+        <TextView
+            android:id="@+id/detailPool_goalsAgainst_Text"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="24dp"
+            android:textAlignment="center"
+            android:textColor="@color/darkgray"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/detailPoolFatigueText"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/detailPool_goalsFor_Text"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textAlignment="center"
+            android:textColor="@color/darkgray"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/detailPoolFatigueText10"
+            app:layout_constraintEnd_toStartOf="@+id/detailPool_goalsAgainst_Text"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/detailPoolFatigueText10"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:background="@color/teal_700"
+            android:text="Fatigue"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/detailPool_fatigue_Text"
+            app:layout_constraintEnd_toStartOf="@+id/detailPoolFatigueText"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/detailPoolFatigueText"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/teal_700"
+            android:text="Strength"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/detailPool_strength_Text"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/detailPool_fatigue_Text"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/darkgray"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/detailPool_strength_Text"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/detailPool_strength_Text"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/darkgray"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/detailPoolFatigueText3"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:background="@color/teal_700"
+            android:text="Goals for"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/detailPool_goalsFor_Text"
+            app:layout_constraintEnd_toStartOf="@+id/detailPoolFatigueText4"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/detailPoolFatigueText4"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/teal_700"
+            android:text="Goals against"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/detailPool_goalsAgainst_Text"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/detailPool_pointsFor_Text"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textAlignment="center"
+            android:textColor="@color/darkgray"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/detailPoolFatigueText3"
+            app:layout_constraintEnd_toStartOf="@+id/detailPool_pointsAgainst_Text"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/detailPoolFatigueText7"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:background="@color/teal_700"
+            android:text="Points for"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/detailPool_pointsFor_Text"
+            app:layout_constraintEnd_toStartOf="@+id/detailPoolFatigueText8"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/detailPool_teamName_text"
+            android:layout_width="375dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="16dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/detailPoolFatigueText7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.261"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/detailPoolFatigueText8"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/teal_700"
+            android:text="Points against"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/detailPool_pointsAgainst_Text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailPool_teamName_text"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/detailPool_pointsAgainst_Text"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="24dp"
+            android:textAlignment="center"
+            android:textColor="@color/darkgray"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/detailPoolFatigueText4"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
