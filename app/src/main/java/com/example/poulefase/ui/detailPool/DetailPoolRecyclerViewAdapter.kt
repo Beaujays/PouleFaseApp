@@ -70,10 +70,10 @@ class DetailPoolRecyclerViewAdapter (
         // makes title of subject in list
         holder.id = poolTeam.PoolTeamsID
         holder.detailFatigue.text = poolTeam.FatiguePercentage
-        holder.detailPointsFor.text = poolTeam.PointsFor
-        holder.detailPointsAgainst.text = poolTeam.PointsAgainst
-        holder.detailGoalsFor.text = poolTeam.GoalsFor
-        holder.detailGoalsAgainst.text = poolTeam.GoalsAgainst
+        holder.detailPointsFor.text = poolTeam.PointsFor.toString()
+        holder.detailPointsAgainst.text = poolTeam.PointsAgainst.toString()
+        holder.detailGoalsFor.text = poolTeam.GoalsFor.toString()
+        holder.detailGoalsAgainst.text = poolTeam.GoalsAgainst.toString()
         holder.detailTeamName.text = poolTeam.TeamName
         holder.detailStrength.text = poolTeam.Strength
     }

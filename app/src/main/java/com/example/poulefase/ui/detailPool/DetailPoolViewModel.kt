@@ -8,6 +8,7 @@ import com.example.poulefase.data.repositories.GamesRepository
 import com.example.poulefase.data.repositories.PoolTeamsRepository
 import com.example.poulefase.data.repositories.PoolsRepository
 import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
 
 @Suppress("UNCHECKED_CAST")
 class DetailPoolViewModel(
@@ -46,6 +47,7 @@ class DetailPoolViewModel(
     fun updatePoolTeams(poolTeams: PoolTeams) = viewModelScope.launch {
         repositoryPoolTeams.update(poolTeams)
     }
+
 }
 
 class DetailPoolViewModelFactory(

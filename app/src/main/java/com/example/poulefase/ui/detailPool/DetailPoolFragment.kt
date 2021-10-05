@@ -107,6 +107,8 @@ class DetailPoolFragment : Fragment() {
 
             gamesList.forEach{ game ->
 
+                Thread.sleep(1000L)
+
                 homePoolTeam = detailPoolViewModel.getTeamID(game.homeGame.toString(), pool?.value?.PoolID.toString())!!
                 awayPoolTeam = detailPoolViewModel.getTeamID(game.awayGame.toString(), pool?.value?.PoolID.toString())!!
 
@@ -123,48 +125,40 @@ class DetailPoolFragment : Fragment() {
                         "0",
                         "",""
                     )
-                    val pointsForHome: Int = homePoolTeam.value!!.PointsFor.toInt() + 3
-                    val pointsForAway: Int = awayPoolTeam.value!!.PointsFor.toInt() + 0
-                    val pointsAgainstHome: Int = homePoolTeam.value!!.PointsAgainst.toInt() + 0
-                    val pointsAgainstAway: Int = awayPoolTeam.value!!.PointsAgainst.toInt() + 3
-                    val goalsForHome: Int = homePoolTeam.value!!.GoalsFor.toInt() + 1
-                    val goalsForAway: Int = awayPoolTeam.value!!.GoalsFor.toInt() + 0
-                    val goalsAgainstHome: Int = homePoolTeam.value!!.GoalsAgainst.toInt() + 0
-                    val goalsAgainstAway: Int = awayPoolTeam.value!!.GoalsAgainst.toInt() + 1
-                    val updateHomePoolTeam = PoolTeams(
+                    detailPoolViewModel.insertGames(games)
+
+                    val updateHomePoolTeamWon = PoolTeams(
                         homePoolTeam.value!!.PoolTeamsID,
                         "",
                         homePoolTeam.value!!.SequenceNb,
                         homePoolTeam.value!!.PoolID,
                         homePoolTeam.value!!.TeamID,
                         homePoolTeam.value!!.TeamName,
-                        pointsForHome.toString(),
-                        pointsAgainstHome.toString(),
-                        goalsForHome.toString(),
-                        goalsAgainstHome.toString(),
+                        homePoolTeam.value!!.PointsFor + 3,
+                        homePoolTeam.value!!.PointsAgainst,
+                        homePoolTeam.value!!.GoalsFor + 1,
+                        homePoolTeam.value!!.GoalsAgainst,
                         homePoolTeam.value!!.FatiguePercentage,
                         homePoolTeam.value!!.Strength
                     )
+                    detailPoolViewModel.updatePoolTeams(updateHomePoolTeamWon)
 
-                    val updateAwayPoolTeam = PoolTeams(
+                    val updateAwayPoolTeamLose = PoolTeams(
                         awayPoolTeam.value!!.PoolTeamsID,
                         "",
                         awayPoolTeam.value!!.SequenceNb,
                         awayPoolTeam.value!!.PoolID,
                         awayPoolTeam.value!!.TeamID,
                         awayPoolTeam.value!!.TeamName,
-                        pointsForAway.toString(),
-                        pointsAgainstAway.toString(),
-                        goalsForAway.toString(),
-                        goalsAgainstAway.toString(),
+                        awayPoolTeam.value!!.PointsFor,
+                        awayPoolTeam.value!!.PointsAgainst + 3,
+                        awayPoolTeam.value!!.GoalsFor,
+                        awayPoolTeam.value!!.GoalsAgainst + 1,
                         awayPoolTeam.value!!.FatiguePercentage,
                         awayPoolTeam.value!!.Strength
                     )
                     // Save game record in FireStore
-                    detailPoolViewModel.insertGames(games)
-                    detailPoolViewModel.updatePoolTeams(updateHomePoolTeam)
-                    detailPoolViewModel.updatePoolTeams(updateAwayPoolTeam)
-
+                    detailPoolViewModel.updatePoolTeams(updateAwayPoolTeamLose)
                 }
                 if (homePoolTeam.value?.Strength!! < awayPoolTeam.value?.Strength!!) {
                     val games = Games(
@@ -178,48 +172,40 @@ class DetailPoolFragment : Fragment() {
                         "3",
                         "",""
                     )
+                    detailPoolViewModel.insertGames(games)
 
-                    val pointsForHome: Int = homePoolTeam.value!!.PointsFor.toInt() + 0
-                    val pointsForAway: Int = awayPoolTeam.value!!.PointsFor.toInt() + 3
-                    val pointsAgainstHome: Int = homePoolTeam.value!!.PointsAgainst.toInt() + 3
-                    val pointsAgainstAway: Int = awayPoolTeam.value!!.PointsAgainst.toInt() + 0
-                    val goalsForHome: Int = homePoolTeam.value!!.GoalsFor.toInt() + 0
-                    val goalsForAway: Int = awayPoolTeam.value!!.GoalsFor.toInt() + 1
-                    val goalsAgainstHome: Int = homePoolTeam.value!!.GoalsAgainst.toInt() + 1
-                    val goalsAgainstAway: Int = awayPoolTeam.value!!.GoalsAgainst.toInt() + 0
-                    val updateHomePoolTeam = PoolTeams(
+                    val updateHomePoolTeamLose = PoolTeams(
                         homePoolTeam.value!!.PoolTeamsID,
                         "",
                         homePoolTeam.value!!.SequenceNb,
                         homePoolTeam.value!!.PoolID,
                         homePoolTeam.value!!.TeamID,
                         homePoolTeam.value!!.TeamName,
-                        pointsForHome.toString(),
-                        pointsAgainstHome.toString(),
-                        goalsForHome.toString(),
-                        goalsAgainstHome.toString(),
+                        homePoolTeam.value!!.PointsFor,
+                        homePoolTeam.value!!.PointsAgainst + 3,
+                        homePoolTeam.value!!.GoalsFor,
+                        homePoolTeam.value!!.GoalsAgainst + 1,
                         homePoolTeam.value!!.FatiguePercentage,
                         homePoolTeam.value!!.Strength
                     )
+                    detailPoolViewModel.updatePoolTeams(updateHomePoolTeamLose)
 
-                    val updateAwayPoolTeam = PoolTeams(
+                    val updateAwayPoolTeamWon = PoolTeams(
                         awayPoolTeam.value!!.PoolTeamsID,
                         "",
                         awayPoolTeam.value!!.SequenceNb,
                         awayPoolTeam.value!!.PoolID,
                         awayPoolTeam.value!!.TeamID,
                         awayPoolTeam.value!!.TeamName,
-                        pointsForAway.toString(),
-                        pointsAgainstAway.toString(),
-                        goalsForAway.toString(),
-                        goalsAgainstAway.toString(),
+                        awayPoolTeam.value!!.PointsFor + 3,
+                        awayPoolTeam.value!!.PointsAgainst,
+                        awayPoolTeam.value!!.GoalsFor + 1,
+                        awayPoolTeam.value!!.GoalsAgainst,
                         awayPoolTeam.value!!.FatiguePercentage,
                         awayPoolTeam.value!!.Strength
                     )
                     // Save game record in FireStore
-                    detailPoolViewModel.insertGames(games)
-                    detailPoolViewModel.updatePoolTeams(updateHomePoolTeam)
-                    detailPoolViewModel.updatePoolTeams(updateAwayPoolTeam)
+                    detailPoolViewModel.updatePoolTeams(updateAwayPoolTeamWon)
                 }
                 if (homePoolTeam.value?.Strength!! == awayPoolTeam.value?.Strength!!) {
                     val games = Games(
@@ -233,52 +219,43 @@ class DetailPoolFragment : Fragment() {
                         "1",
                         "",""
                     )
+                    detailPoolViewModel.insertGames(games)
 
-                    val pointsForHome: Int = homePoolTeam.value!!.PointsFor.toInt() + 0
-                    val pointsForAway: Int = awayPoolTeam.value!!.PointsFor.toInt() + 0
-                    val pointsAgainstHome: Int = homePoolTeam.value!!.PointsAgainst.toInt() + 0
-                    val pointsAgainstAway: Int = awayPoolTeam.value!!.PointsAgainst.toInt() + 0
-                    val goalsForHome: Int = homePoolTeam.value!!.GoalsFor.toInt() + 1
-                    val goalsForAway: Int = awayPoolTeam.value!!.GoalsFor.toInt() + 1
-                    val goalsAgainstHome: Int = homePoolTeam.value!!.GoalsAgainst.toInt() + 1
-                    val goalsAgainstAway: Int = awayPoolTeam.value!!.GoalsAgainst.toInt() + 1
-                    val updateHomePoolTeam = PoolTeams(
+                    val updateHomePoolTeamDraw = PoolTeams(
                         homePoolTeam.value!!.PoolTeamsID,
                         "",
                         homePoolTeam.value!!.SequenceNb,
                         homePoolTeam.value!!.PoolID,
                         homePoolTeam.value!!.TeamID,
                         homePoolTeam.value!!.TeamName,
-                        pointsForHome.toString(),
-                        pointsAgainstHome.toString(),
-                        goalsForHome.toString(),
-                        goalsAgainstHome.toString(),
+                        homePoolTeam.value!!.PointsFor,
+                        homePoolTeam.value!!.PointsAgainst,
+                        homePoolTeam.value!!.GoalsFor + 1,
+                        homePoolTeam.value!!.GoalsAgainst + 1,
                         homePoolTeam.value!!.FatiguePercentage,
                         homePoolTeam.value!!.Strength
                     )
+                    detailPoolViewModel.updatePoolTeams(updateHomePoolTeamDraw)
 
-                    val updateAwayPoolTeam = PoolTeams(
+                    val updateAwayPoolTeamDraw = PoolTeams(
                         awayPoolTeam.value!!.PoolTeamsID,
                         "",
                         awayPoolTeam.value!!.SequenceNb,
                         awayPoolTeam.value!!.PoolID,
                         awayPoolTeam.value!!.TeamID,
                         awayPoolTeam.value!!.TeamName,
-                        pointsForAway.toString(),
-                        pointsAgainstAway.toString(),
-                        goalsForAway.toString(),
-                        goalsAgainstAway.toString(),
+                        awayPoolTeam.value!!.PointsFor,
+                        awayPoolTeam.value!!.PointsAgainst,
+                        awayPoolTeam.value!!.GoalsFor + 1,
+                        awayPoolTeam.value!!.GoalsAgainst + 1,
                         awayPoolTeam.value!!.FatiguePercentage,
                         awayPoolTeam.value!!.Strength
                     )
                     // Save game record in FireStore
-                    detailPoolViewModel.insertGames(games)
-                    detailPoolViewModel.updatePoolTeams(updateHomePoolTeam)
-                    detailPoolViewModel.updatePoolTeams(updateAwayPoolTeam)
+                    detailPoolViewModel.updatePoolTeams(updateAwayPoolTeamDraw)
                 }
             }
         }
         return binding.root
     }
-
 }

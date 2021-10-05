@@ -40,10 +40,10 @@ fun DocumentSnapshot.toPoolTeams() = PoolTeams(
         PoolID = this["poolID"] as String,
         TeamID = this["teamID"] as String,
         TeamName = this["teamName"] as String,
-        PointsFor = this["pointsFor"] as String,
-        PointsAgainst = this["pointsAgainst"] as String,
-        GoalsFor = this["goalsFor"] as String,
-        GoalsAgainst = this["goalsAgainst"] as String,
+        PointsFor = this["pointsFor"] as Long,
+        PointsAgainst = this["pointsAgainst"] as Long,
+        GoalsFor = this["goalsFor"] as Long,
+        GoalsAgainst = this["goalsAgainst"] as Long,
         FatiguePercentage = this["fatiguePercentage"] as String,
         Strength = this["strength"] as String
 )

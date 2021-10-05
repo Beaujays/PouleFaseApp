@@ -10,7 +10,7 @@ class PoolTeamsRepository(private val poolTeamsCollectionReference: CollectionRe
 
     private val defaultPoolTeams = PoolTeams(
         "", "One moment please", "","","",
-        "", "", "", "", "", "", ""
+        "", 0, 0, 0, 0, "", ""
     )
 
     private val all: MutableLiveData<List<PoolTeams>> =
@@ -36,7 +36,7 @@ class PoolTeamsRepository(private val poolTeamsCollectionReference: CollectionRe
             .addOnSuccessListener { documents ->
                 documents
                     .map(QueryDocumentSnapshot::toPoolTeams)
-                    .sortedByDescending { it.PointsFor.toInt() }
+                    .sortedByDescending { it.PointsFor }
                     .let(all::postValue)
             }
         return all

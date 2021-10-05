@@ -7,10 +7,10 @@ data class PoolTeams(
     val PoolID: String,
     var TeamID: String,
     val TeamName: String,
-    val PointsFor: String,
-    val PointsAgainst: String,
-    val GoalsFor: String,
-    val GoalsAgainst: String,
+    var PointsFor: Long,
+    var PointsAgainst: Long,
+    var GoalsFor: Long,
+    var GoalsAgainst: Long,
     val FatiguePercentage: String,
     val Strength: String
 )

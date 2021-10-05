@@ -85,10 +85,10 @@ class CreatePoolFragment : Fragment() {
                                 pool.PoolID,
                                 teams.TeamID,
                                 teams.TeamName,
-                                "0",
-                                "0",
-                                "0",
-                                "0",
+                                0,
+                                0,
+                                0,
+                                0,
                                 "100",
                                 teams.Strength
                         )
